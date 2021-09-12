@@ -1,0 +1,29 @@
+{{ $links := .Site.Params.links }}
+
+<section class="row td-box td-box--4 td-box--gradient td-box--height-auto linkbox">
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+<h2>联系我们</h2>
+<p>即将使用或者想要使用 {{ .Site.Title }}? 在这里可以找到你想要的信息:
+{{ with index $links "user"}}
+{{ template "community-links-list"  . }}
+{{ end }}
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+<h2>开发贡献</h2>
+<p>如果你想要贡献 {{ .Site.Title }}, 加入我们:
+{{ with index $links "developer"}}
+{{ template "community-links-list"  . }}
+{{ end }}
+<p>你可以在这里找到如何参与贡献 <a href="/docs/contribution-guidelines/">Contribution Guidelines</a>.
+</div>
+</section>
+
+{{ define "community-links-list" }}
+<ul>
+ {{ range . }}
+ <li title="{{ .name }}">
+   <a target="_blank" rel="noopener" href="{{ .url }}"><i class="{{ .icon }}"></i> {{ .name }}:</a> {{ .desc }}
+ </li>
+  {{ end }}
+</ul>
+{{ end }}

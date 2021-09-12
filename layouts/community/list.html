@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<a class="td-offset-anchor"></a>
+<section class="row td-box td-box--1 position-relative td-box--gradient td-box--height-auto">
+	<div class="container text-center td-arrow-down">
+		<span class="h4 mb-0">
+<h1>加入 {{ .Site.Title }} 社区</h1>
+
+<p>{{ .Site.Title }} 是一套简明、易用、现代、极客的开源项目。欢迎加入我们！这里有一些方法让你可以更快地了解我们正在开发的项目以便更快加入我们。
+</span>
+	</div>
+</section>
+{{ partial "community_links.html" . }}
+
+<div class="td-content">
+{{ .Content }}
+</div>
+
+{{ end }}
