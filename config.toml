@@ -1,4 +1,4 @@
-baseURL = "https://docs.yuebaix.com/docs/"
+baseURL = "https://docs.yuebaix.com/"
 title = "Yuebaix 开源"
 
 enableRobotsTXT = true
